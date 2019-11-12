@@ -25,6 +25,9 @@ $ repo init -u https://android.googlesource.com/platform/manifest -b master
 $ git clone https://android-git.linaro.org/git/platform/manifest.git .repo/local_manifests -b dragonboard
 $ repo sync -j$(nproc) -c
 ```
+
+If you get the `repo sync` error "fatal duplicate path device/linaro/dragonboard in [...]/.repo/manifest.xml" then replace master with `d3a70484da211b35c11b428b733844d6a36c11c6` in the `repo init` command. In https://android.googlesource.com/platform/manifest/+/ca78f371269660020aa29737b5b89fb95b465576%5E%21 a dragonboard device path was added to upstream AOSP and therefore conflicts with the local manifest device path.
+
 It might take quite a bit of time to fetch the entire AOSP source code!
 
 # Building AOSP
